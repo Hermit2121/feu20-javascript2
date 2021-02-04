@@ -1,5 +1,6 @@
 const socket = io();
 
+const chat = document.querySelector('#chat-window')
 const output = document.querySelector('#output');
 const userName = document.querySelector('#name');
 const message = document.querySelector('#message');
@@ -42,6 +43,10 @@ socket.on('message', data => {
   `
 
   feedback.innerHTML = ''
+
+  // scrolla ner
+  chat.scrollTop = chat.scrollHeight;
+  // console.log(chat.scrollHeight);
 })
 
 

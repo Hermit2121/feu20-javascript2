@@ -28,8 +28,6 @@ io.on('connection', socket => {
     io.sockets.emit('message', data)
   })
 
-
-
   // Broadcast - sckickara någonting till alla andra förutom den socket eventet kom ifrån
   socket.on('typing', data => {
     socket.broadcast.emit('typing', data)
