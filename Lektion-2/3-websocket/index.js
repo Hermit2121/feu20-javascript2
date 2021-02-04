@@ -18,8 +18,21 @@ server.listen(PORT, () => {
 io.on('connection', socket => {
   // console.log(socket.id)
 
-  socket.emit('message', 'Welcome to the chat')
+  socket.broadcast.emit('user', 'A user has joined the chat');
+  socket.on('disconnect', () => {
+    io.emit('user', 'A user has left the chat')
+  })
+
+  socket.on('message', data => {
+    // console.log(data)
+    io.sockets.emit('message', data)
+  })
 
 
+
+  // Broadcast - sckickara någonting till alla andra förutom den socket eventet kom ifrån
+  socket.on('typing', data => {
+    socket.broadcast.emit('typing', data)
+  })
 
 })

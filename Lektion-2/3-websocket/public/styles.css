@@ -22,6 +22,7 @@ nav {
 #chat-window {
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
 }
 #name {
   width: 100%;
@@ -57,4 +58,11 @@ nav {
 }
 .right {
   margin-left: auto;
+}
+/* .right .chat-name {
+  text-align: end;
+} */
+#feedback {
+  color: #6d6d6d;
+  margin-left: 1rem;
 }
