@@ -1,0 +1,8 @@
+.title {
+  flex: 1;
+  cursor: pointer;
+}
+.complete {
+  text-decoration: line-through;
+  color: #8b8b8b;
+}
