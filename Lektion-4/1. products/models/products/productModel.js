@@ -16,9 +16,11 @@ exports.getOneProduct = (req, res) => {
 }
 
 exports.createProduct = (req, res) => {
+
   Product.find({ name: req.body.name })
-  .then(exists => {
-    if(exists > 0) {
+  .then(data => {
+
+    if(data > 0) {
       return res.status(400).json({
         statusCode: 400,
         status: false,
@@ -33,6 +35,7 @@ exports.createProduct = (req, res) => {
       desc: req.body.desc,
       price: req.body.price,
       image: req.body.image
+
     })
 
 
