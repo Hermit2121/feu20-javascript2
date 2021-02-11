@@ -1,12 +1,15 @@
 const app = require('./app');
 const mongoose = require('mongoose');
-const port = 9999;
-
-const serverURI = 'http://localhost:' + port;
-const mongoURI = 'byt!'
+require('dotenv').config();
 
 
-app.listen(port, () => console.log('Webserver: ' + serverURI));
+const PORT = process.env.PORT || 4000;
+
+const serverURI = 'http://localhost:' + PORT;
+const mongoURI = process.env.MONGO_URI;
+
+
+app.listen(PORT, () => console.log('Webserver: ' + serverURI));
 
 mongoose
 .set('useCreateIndex', true)
