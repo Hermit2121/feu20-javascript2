@@ -24,7 +24,7 @@ export default {
   computed: {
     computedClasses() {
       return {
-        'bg-dark': this.bg,
+        'bg-dark': this.bg, 
         'text-white': this.text
       }
     }
