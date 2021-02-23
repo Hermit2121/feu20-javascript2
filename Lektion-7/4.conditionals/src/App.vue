@@ -5,8 +5,11 @@
     <div class="container">
       <h1 v-if="name === 'Joakim'">Hej {{ name }} välkommen tillbaka</h1>
       <h1 v-else>Trevligt att träffas {{ name }}</h1>
+      <h2>Du har {{ todos.length }} todos att göra idag</h2>
 
       <app-form />
+
+      <todos :todos="todos" />
     </div>
   </div>
 </template>
@@ -14,17 +17,24 @@
 <script>
 import Navbar from './components/Navbar'
 import AppForm from './components/Form'
+import Todos from './components/Todos.vue'
 
 export default {
   name: 'App',
   components: {
     Navbar,
-    AppForm
+    AppForm,
+    Todos
   },
   data() {
     return {
       name: 'Nisse',
-      active: false
+      active: false,
+      todos: [
+        {id: 1, title: 'Todo1'},
+        {id: 2, title: 'Todo2'},
+        {id: 3, title: 'Todo3'}
+      ]
     }
   }
 }
