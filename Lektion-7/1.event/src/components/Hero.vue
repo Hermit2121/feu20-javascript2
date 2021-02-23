@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-5 py-5 z-depth-1">
+  <div class="container my-5 py-5 z-depth-1" v-on:click.self="handleClick">
 
     
     <!--Section: Content-->
@@ -30,6 +30,9 @@ export default {
     },
     clickFunction() {
       console.log('Du klickade på knappen')
+    },
+    handleClick() {
+      console.log('clickade')
     }
   }
 }

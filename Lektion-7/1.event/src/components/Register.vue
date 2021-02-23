@@ -16,7 +16,7 @@
                 <div class="col">
                     <!-- First name -->
                     <div class="md-form">
-                        <input type="text" id="materialRegisterFormFirstName" class="form-control">
+                        <input type="text" id="materialRegisterFormFirstName" @keyup.a="logName" class="form-control">
                         <label for="materialRegisterFormFirstName">First name</label>
                     </div>
                 </div>
@@ -77,7 +77,11 @@
 
 <script>
 export default {
-
+  methods: {
+    logName(e) {
+      console.log(e.key)
+    }
+  }
 }
 </script>
 
