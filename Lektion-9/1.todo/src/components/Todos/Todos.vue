@@ -2,8 +2,8 @@
   <div>
     <transition-group name="fade-slide">
       <div v-for="todo in todos" :key="todo.id">
-        <todo v-if="value === ''" :todo="todo" @delete-todo="$emit('delete-todo', todo.id)" />
-        <todo v-else-if="todo.completed === value" :todo="todo" @delete-todo="$emit('delete-todo', todo.id)" />
+        <todo v-if="value === ''" :todo="todo" @toggle="$emit('toggle')" @delete-todo="$emit('delete-todo', todo.id)" />
+        <todo v-else-if="todo.completed === value" @toggle="$emit('toggle')" :todo="todo" @delete-todo="$emit('delete-todo', todo.id)" />
       </div>
     </transition-group>
   </div>
