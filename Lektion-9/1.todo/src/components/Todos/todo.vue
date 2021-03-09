@@ -2,7 +2,7 @@
   <div>
     <div class="d-flex justify-content-between align-items-center px-2 border bg-white mt-1">
       <p class="p-3" :class="{ done: todo.completed }" @click="todo.completed = !todo.completed">{{ todo.title }}</p>
-      <button class="btn btn-danger px-3" @click="$emit('delete-todo', todo._id)">X</button>
+      <button class="btn btn-danger px-3" @click="$emit('delete-todo', todo.id)">X</button>
     </div>
   </div>
 </template>
