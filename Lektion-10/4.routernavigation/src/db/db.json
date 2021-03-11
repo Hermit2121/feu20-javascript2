@@ -7,6 +7,23 @@
       "equipment": [
         "Projektor",
         "Whiteboard"
+      ],
+      "images": [
+        {
+          "url": "building1.jpg",
+          "active": true,
+          "alt": "first slide"
+        },
+        {
+          "url": "building2.jpg",
+          "active": false,
+          "alt": "second slide"
+        },
+        {
+          "url": "building3.jpg",
+          "active": false,
+          "alt": "third slide"
+        }
       ]
     },
     {
@@ -16,6 +33,23 @@
       "equipment": [
         "Projektor",
         "Whiteboard"
+      ],
+      "images": [
+        {
+          "url": "building1.jpg",
+          "active": true,
+          "alt": "first slide"
+        },
+        {
+          "url": "building2.jpg",
+          "active": false,
+          "alt": "second slide"
+        },
+        {
+          "url": "building3.jpg",
+          "active": false,
+          "alt": "third slide"
+        }
       ]
     },
     {
@@ -25,6 +59,23 @@
       "equipment": [
         "Projektor",
         "Whiteboard"
+      ],
+      "images": [
+        {
+          "url": "building1.jpg",
+          "active": true,
+          "alt": "first slide"
+        },
+        {
+          "url": "building2.jpg",
+          "active": false,
+          "alt": "second slide"
+        },
+        {
+          "url": "building3.jpg",
+          "active": false,
+          "alt": "third slide"
+        }
       ]
     },
     {
@@ -33,6 +84,23 @@
       "capacity": 2,
       "equipment": [
         "Whiteboard"
+      ],
+      "images": [
+        {
+          "url": "building1.jpg",
+          "active": true,
+          "alt": "first slide"
+        },
+        {
+          "url": "building2.jpg",
+          "active": false,
+          "alt": "second slide"
+        },
+        {
+          "url": "building3.jpg",
+          "active": false,
+          "alt": "third slide"
+        }
       ]
     }
   ]

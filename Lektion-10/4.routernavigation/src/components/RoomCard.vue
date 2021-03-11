@@ -1,12 +1,12 @@
 <template>
   <div class="col-12 col-md-6 col-lg-3">
-    <div>
-      <div class="card border">
+    <router-link :to="'/booking/details/' + room.id">
+      <div class="card border hover-shadow">
         <div class="card-body">
           {{ room.name }} 
         </div>
       </div>
-    </div>
+    </router-link>
   </div>
 </template>
 
