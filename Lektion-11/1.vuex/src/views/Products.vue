@@ -2,14 +2,16 @@
   <div class="products">
     <aside>
       <div class="buttons">
-        <button><i class="fas fa-th-large"></i></button>
-        <button><i class="fas fa-list"></i></button>
+        <button @click="comp = 'Grid'"><i class="fas fa-th-large"></i></button>
+        <button @click="comp = 'List'"><i class="fas fa-list"></i></button>
       </div>
+      <br>
       <form>
         <div>
           <input type="text" placeholder="search...">
         </div>
       </form>
+      <br>
       <div>
         <a href="#">Filter</a>
       </div>
@@ -37,6 +39,25 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+  .products {
+    display: flex;
+  }
+  aside {
+    flex: 2;
+    background: #424242;
+    padding: 2rem;
+    min-height: calc(100vh - 66.29px);
+  }
+  .content {
+    flex: 10;
+  }
+  a {
+    color: #fff;
+  }
+  .buttons button {
+    padding: 0.2rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
 </style>
