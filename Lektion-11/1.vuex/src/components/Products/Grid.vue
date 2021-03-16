@@ -3,7 +3,7 @@
     <button @click="addToPrice(5)" class="btn">ADD</button>
     <button @click="subAsync(5)" class="btn">SUB</button>
     <div class="grid">
-      <product-card v-for="product in taxedProducts" :key="product.id" class="card" :product="product" />
+      <product-card v-for="product in filteredProducts" :key="product.id" class="card" :product="product" />
     </div>
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
     products() {
       return this.$store.state.products
     },
-    ...mapGetters(['taxedProducts'])
+    ...mapGetters(['taxedProducts', 'filteredProducts'])
   }
 }
 </script>
