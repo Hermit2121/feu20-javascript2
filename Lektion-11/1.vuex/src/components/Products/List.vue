@@ -45,12 +45,17 @@ export default {
       //   product.price += 10
       // })
 
-      this.$store.commit('ADD', 10)
+      // this.$store.commit('ADD', 10)
+      this.$store.dispatch('addToPrice', 10)
     },
     subPrice(amount) {
-      this.products.forEach(product => {
-        product.price -= amount
-      })
+      // this.products.forEach(product => {
+      //   product.price -= amount
+      // })
+
+      // this.$store.commit('SUB', amount)
+
+      this.$store.dispatch('subAsync', amount)
     }
   },
   computed: {

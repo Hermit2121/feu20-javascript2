@@ -21,7 +21,8 @@ export default new Vuex.Store({
       { id: 13, name: 'Product 13', price: 700 },
       { id: 14, name: 'Product 14', price: 800 },
       { id: 15, name: 'Product 15', price: 900 }
-    ]
+    ],
+    comp: 'Grid'
   },
   getters: {
     taxedProducts: state => {
@@ -34,17 +35,41 @@ export default new Vuex.Store({
       })
 
       return taxedProducts
-    }
+    },
+    comp: state => state.comp
   },
   mutations: {
     ADD: (state, amount) => {
       state.products.forEach(product => {
         product.price += amount
       })
+    },
+    SUB: (state, amount) => {
+      state.products.forEach(product => {
+        product.price -= amount
+      })
+    },
+    CHANGE_COMP: (state, payload) => {
+      state.comp = payload
     }
+
   },
   actions: {
-  },
-  modules: {
+    // subAsync: (context, amount) => {
+    //   setTimeout(() => {
+    //     context.commit('SUB', amount)
+    //   }, 3000)
+    // }
+    subAsync: ({ commit }, amount) => {
+      setTimeout(() => {
+        commit('SUB', amount)
+      }, 3000)
+    },
+    addToPrice: ({commit}, amount) => {
+      commit('ADD', amount)
+    },
+    changeComp: ({commit}, component) => {
+      commit('CHANGE_COMP', component)
+    }
   }
 })
