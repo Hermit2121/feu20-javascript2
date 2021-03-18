@@ -2,7 +2,8 @@
   <div>
     <h1 class="mt-5">My Posts</h1>
     <div class="container mt-5">
-      <post v-for="post in posts" :key="post.id" :post="post" />
+    <input type="text" placeholder="Search" class="form-control mb-5" v-model="searchVal" @keyup="search(searchVal)">
+      <post v-for="post in filteredPosts" :key="post.id" :post="post" />
     </div>
   </div>
 </template>
@@ -13,17 +14,23 @@ import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
+  data() {
+    return {
+      searchVal: ''
+    }
+  },
   components: {
     Post
   },
   computed: {
-    ...mapGetters(['posts'])
+    ...mapGetters(['posts', 'filteredPosts', 'searchValue'])
   },
   methods: {
-    ...mapActions(['getPosts'])
+    ...mapActions(['getPosts', 'search'])
   },
   mounted() {
     this.getPosts()
+    this.searchVal = this.searchValue
   }
 }
 </script>
