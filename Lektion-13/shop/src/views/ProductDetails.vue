@@ -91,7 +91,7 @@
 
             <div class="row mt-3">
               <div class="col-md-12 text-center text-md-left text-md-right">
-                <button class="btn btn-primary btn-rounded">
+                <button class="btn btn-primary btn-rounded" @click="addProductToCart({ product, quantity })">
                   <i class="fas fa-cart-plus mr-2" aria-hidden="true"></i> Add to cart</button>
               </div>
             </div>
@@ -116,8 +116,13 @@
 import { mapActions, mapGetters } from 'vuex'
 export default {
   props: ['id'],
+  data() {
+    return {
+      quantity: 1
+    }
+  },
   methods: {
-    ...mapActions(['getOneProduct'])
+    ...mapActions(['getOneProduct', 'addProductToCart'])
   },
   computed: {
     ...mapGetters(['product'])
