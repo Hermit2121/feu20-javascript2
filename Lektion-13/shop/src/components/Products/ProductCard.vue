@@ -1,17 +1,16 @@
 <template>
   <div class="col">
-    <div class="card">
+    <div class="card p-3">
       <img
-        src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+        :src="product.image"
         class="card-img-top"
         alt="..."
       />
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          This is a longer card with supporting text below as a natural lead-in to
-          additional content. This content is a little bit longer.
-        </p>
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">{{ product.short }}</p>
+
+        <router-link :to="{name: 'ProductDetails', params: {id: product.id}}" type="button" class="btn btn-primary">Show Product</router-link>
       </div>
     </div>
   </div>
@@ -19,7 +18,8 @@
 
 <script>
 export default {
-
+  name: 'ProductCard',
+  props: ['product']
 }
 </script>
 
