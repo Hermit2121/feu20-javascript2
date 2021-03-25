@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Products from '../views/Products.vue'
 import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
+import User from '../views/User.vue'
 
 Vue.use(VueRouter)
 
@@ -18,9 +20,20 @@ const routes = [
     component: Login
   },
   {
+    path: '/register',
+    name: 'Register',
+    component: Register
+  },
+  {
     path: '/products',
     name: 'Products',
     component: Products
+  },
+  {
+    path: '/user',
+    name: 'User',
+    component: User,
+    meta: { authorize: true }
   },
   {
     path: '/about',
@@ -37,5 +50,25 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+
+router.beforeEach((to, from, next) => {
+  const { authorize } = to.meta
+  const token = localStorage.getItem('token')
+
+  if(authorize) {
+
+    if(!token) {
+      next({path: '/login', query: { redirect: to.fullPath }})
+    } else {
+      next()
+    }
+
+  }
+  next()
+})
+
+
+
 
 export default router
