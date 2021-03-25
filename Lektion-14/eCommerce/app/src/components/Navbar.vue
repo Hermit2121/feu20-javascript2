@@ -55,7 +55,7 @@
             aria-expanded="false"
           >
             <i class="fas fa-shopping-cart"></i>
-            <span v-show="cartItemCount" class="badge rounded-pill badge-notification bg-danger">1</span>
+            <span class="badge rounded-pill badge-notification bg-danger">1</span>
           </a>
 
           <ul class="dropdown-menu dropdown-menu-end shopping-cart" aria-labelledby="navbarDropdown">
